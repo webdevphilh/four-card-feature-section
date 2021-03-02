@@ -21,7 +21,8 @@ $veryLightGray: hsl(0, 0%, 98%);
 
 body{
     display: grid;
-    grid-template-columns: repeat(3, 25vw);
+    grid-template-columns: repeat(3, minmax(270px, 25vw));//25vw);
+    
     grid-template-rows: 20vh 35vh 32svh;
     gap: 20px;
     width: 100vw;
@@ -106,6 +107,7 @@ section{
         }
     }
 
+    //grid
     &.supervisor{
         grid-row: 2 / 4;
         grid-column: 1;
@@ -128,4 +130,58 @@ section{
         height: fit-content;
         margin: auto;
     }
+}
+
+
+@media screen and (max-width:850px){
+
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content;
+    }
+
+    header{
+        grid-row: 1;
+        grid-column: 1;
+        margin-top: 55vh;
+        h1{
+            font-size: 1.6rem;
+        }
+        p{
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            width: 85vw;
+        }
+    }
+
+    section{
+        width: 85vw;
+        > div{
+            &::before{
+                width: 85vw;
+            }
+        }
+        &.supervisor{
+            grid-column: 1;
+            grid-row: 2;
+            justify-self: center;
+        }
+        &.teambuilder{
+            grid-column: 1;
+            grid-row: 3;
+            justify-self: center;
+        }
+        &.karma{
+            grid-column: 1;
+            grid-row: 4;
+            justify-self: center;
+        }
+        &.calculator{
+            grid-column: 1;
+            grid-row: 5;
+            justify-self: center;
+        }
+
+    }
+
 }

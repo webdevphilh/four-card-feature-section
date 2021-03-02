@@ -9,8 +9,8 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (25vw)[3];
-      grid-template-columns: repeat(3, 25vw);
+  -ms-grid-columns: (minmax(270px, 25vw))[3];
+      grid-template-columns: repeat(3, minmax(270px, 25vw));
   -ms-grid-rows: 20vh 35vh 32svh;
       grid-template-rows: 20vh 35vh 32svh;
   gap: 20px;
@@ -159,5 +159,68 @@ section.calculator {
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: fit-content;
+        grid-template-rows: -webkit-fit-content;
+        grid-template-rows: fit-content;
+  }
+  header {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    margin-top: 55vh;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 85vw;
+  }
+  section {
+    width: 85vw;
+  }
+  section > div::before {
+    width: 85vw;
+  }
+  section.supervisor {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  section.teambuilder {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  section.karma {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 4;
+    grid-row: 4;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  section.calculator {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 5;
+    grid-row: 5;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
