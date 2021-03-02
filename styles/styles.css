@@ -53,6 +53,7 @@ header p {
 }
 
 section {
+  background-color: white;
   font-size: 15px;
   height: 100%;
   width: 100%;
